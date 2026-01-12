@@ -1,0 +1,16 @@
+{
+  "name": "x402-facilitator-node",
+  "version": "1.0.0",
+  "description": "A standalone x402 facilitator node",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "x402-open": "latest",
+    "express": "latest",
+    "viem": "latest",
+    "dotenv": "latest"
+  }
+}
