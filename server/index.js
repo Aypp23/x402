@@ -16,6 +16,25 @@ const facilitator = new Facilitator({
 
 createExpressAdapter(facilitator, app, "/facilitator");
 
+// Info endpoint for GET /facilitator
+app.get("/facilitator", (req, res) => {
+  res.json({
+    name: "x402-open Facilitator",
+    version: "1.0.0",
+    protocol: "x402",
+    description: "Payment facilitator for HTTP 402 micropayments",
+    supported_networks: ["base-sepolia"],
+    supported_assets: ["USDC", "ETH"],
+    documentation: "https://x402.org",
+    endpoints: {
+      verify: "POST /facilitator/verify",
+      settle: "POST /facilitator/settle",
+      supported: "GET /facilitator/supported",
+      info: "GET /facilitator"
+    }
+  });
+});
+
 const PORT = process.env.PORT || 4101;
 
 // Auto-register with the gateway
