@@ -16,7 +16,7 @@ const facilitator = new Facilitator({
 
 createExpressAdapter(facilitator, app, "/facilitator");
 
-const PORT = 4101;
+const PORT = process.env.PORT || 4101;
 
 // Auto-register with the gateway
 startGatewayRegistration({
